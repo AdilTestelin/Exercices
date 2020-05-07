@@ -11,7 +11,7 @@ public class addTwoNumbers {
     }
 
     public static ListNode addTwoNumbersMethod(ListNode l1, ListNode l2) {
-        ListNode[] listnode = new ListNode[1000];
+        ListNode[] listnode = new ListNode[10];
         int exp = 1;
         int r1 = l1.val;
         // System.out.println("Valeur du noeud courant l1 : " + l1.val);
@@ -34,15 +34,19 @@ public class addTwoNumbers {
         int r3 = r1 + r2;
 
         int i = 0;
-        listnode[i] = new ListNode(r3%10, listnode[i+1]);
+        listnode[i] = new ListNode(r3%10);
+        // System.out.println("Valeur de r3 : " + r3);
         r3 /= 10;
-        System.out.println("Valeur du noeud courant r3 :" + listnode[i].val);
+        // System.out.println("Valeur du noeud courant r3 :" + listnode[i].val);
         while (r3 != 0){
-            listnode[i] = new ListNode(r3%10, listnode[i+1]);
-            System.out.println("Valeur du noeud courant r3 :" + listnode[i].val);
+            listnode[i].next = new ListNode(r3%10);
+            i++;
+            listnode[i] = new ListNode(r3%10);
+            // System.out.println("Valeur de r3 : " + r3);
+            // System.out.println("Valeur du noeud courant r3 :" + listnode[i].val);
             r3 /= 10;
         }
-        listnode[i].next = null;
+
         return listnode[0];
     }
 
