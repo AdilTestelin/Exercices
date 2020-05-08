@@ -1,11 +1,13 @@
+package AlgorithmicStructures;
+
 /**
- * Class that provides an implementation of a LinkedList.
- * @param <E> : a generic type, which represent the type of the data that are in the LinkedList.
+ * Class that provides an implementation of a AlgorithmicStructures.LinkedList.
+ * @param <E> : a generic type, which represent the type of the data that are in the AlgorithmicStructures.LinkedList.
  */
 public class LinkedList<E> {
 
     /**
-     * Inner class that represents a node in our representation of a LinkedList.
+     * Inner class that represents a node in our representation of a AlgorithmicStructures.LinkedList.
      */
     private class Node {
         private E value;
@@ -33,14 +35,14 @@ public class LinkedList<E> {
     private Node head;
 
     /**
-     * Constructor of out LinkedList class.
+     * Constructor of out AlgorithmicStructures.LinkedList class.
      */
     public LinkedList(){
         this.head = null;
     }
 
     /**
-     * Tells if the current LinkedList is empty or not.
+     * Tells if the current AlgorithmicStructures.LinkedList is empty or not.
      * @return a boolean, true if it's empty, false otherwise.
      */
     public boolean isEmpty(){
@@ -48,8 +50,8 @@ public class LinkedList<E> {
     }
 
     /**
-     * Add an element at the head of our LinkedList.
-     * @param newHead : the new head of our LinkedList.
+     * Add an element at the head of our AlgorithmicStructures.LinkedList.
+     * @param newHead : the new head of our AlgorithmicStructures.LinkedList.
      */
     public void add(Node newHead){
         if (!this.isEmpty()) {
@@ -59,7 +61,7 @@ public class LinkedList<E> {
     }
 
     /**
-     * Removes the first element of our LinkedList.
+     * Removes the first element of our AlgorithmicStructures.LinkedList.
      */
     public void remove(){
         if(this.head.next == null){
@@ -79,7 +81,7 @@ public class LinkedList<E> {
 
 
     /**
-     * Tells if a LinkedList contains an element or not.
+     * Tells if a AlgorithmicStructures.LinkedList contains an element or not.
      * @param element : the element that we want to compare to each elements of our Linkedlist.
      * @return : true if the element is in our list, false otherwise.
      */
