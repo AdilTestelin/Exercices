@@ -1,21 +1,32 @@
 package LongestSubWoutRepeatingCharac;
 
+import java.util.*;
+
 public class Solution {
-    public int lengthOfLongestSubstring(String s) {
-        int cpt = 1;
+    public static int lengthOfLongestSubstring(String s) {
         int cptFinal = 1;
-        for (int i = 0; i < s.length(); i++) {
-            String tab =  "";
-            tab += s.charAt(i);
-            for (int j = i; j < s.length(); j++) {
-                char nextString = s.charAt(j+1);
-                if (s.charAt(i) == s.charAt(i + 1) && !tab.contains(nextString)) {
+        for(int i = 0; i < s.length(); i++) {
+            ArrayList<Character> listChara = new ArrayList<>();
+            int cpt = 1;
+            listChara.add(s.charAt(i));
+            boolean loop = true;
+            int j = i+1;
+            while(loop && j < s.length()-1){
+                Character chara = s.charAt(j);
+                if(!listChara.contains(chara)){
                     cpt++;
+                    listChara.add(chara);
                 } else {
                     cptFinal = cpt;
+                    loop = false;
                 }
-                cpt = 1;
             }
-        } return cptFinal;
+        }
+
+        return cptFinal;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(lengthOfLongestSubstring("pwwkew"));
     }
 }
